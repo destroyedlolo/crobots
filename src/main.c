@@ -232,7 +232,7 @@ int n;
 	  strcpy(outfile,f[i]);
 	  strcat(outfile,"o");
 	  f_out=fopen(outfile,"wb");
-	  fwrite(&(robots[i].code),sizeof(long),1,f_out); /*questo è un valore di offset*/
+	  fwrite(&(robots[i].code),sizeof(long),1,f_out); /*questo Ã¨ un valore di offset*/
 	  fwrite(&(robots[i].ext_count),sizeof(int),1,f_out);
 	  fwrite(robots[i].funcs,ILEN,MAXSYM,f_out);
 	  fwrite(robots[i].code, sizeof(struct instr),CODESPACE,f_out);
@@ -701,9 +701,13 @@ void rand_pos(n)
 int n;
 {
   int i, k;
-  int quad[4];
+  int quad[MAXROBOTS];
+  int m=n%2;
+  if(m==0){
+    m=1;
+  }
 
-  for (i = 0; i < 4; i++) {
+  for (i = 0; i < MAXROBOTS; i++) {
     quad[i] = 0;
   }
 
@@ -723,7 +727,7 @@ int n;
     robots[i].org_x = robots[i].x =
        (rand() % (MAX_X * CLICK / 2)) + ((MAX_X * CLICK / 2) * (k%2));
     robots[i].org_y = robots[i].y =
-       (rand() % (MAX_Y * CLICK / 2)) + ((MAX_Y * CLICK / 2) * (k<2));
+       (rand() % (MAX_Y * CLICK / 2)) + ((MAX_Y * CLICK / 2) * (k<m));
   }
 }
 
