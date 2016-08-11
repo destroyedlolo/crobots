@@ -722,7 +722,7 @@ int n;
       quad[k] = 1;
     else {
       while (quad[k] != 0) {
-	if (++k == 4)
+	if (++k == MAXROBOTS)
 	  k = 0;
       }
       quad[k] = 1;
