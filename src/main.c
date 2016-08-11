@@ -321,7 +321,7 @@ int n;
 #endif
 
   rand_pos(num_robots);
-
+By
   init_disp();
   update_disp();
   movement = MOTION_CYCLES;
@@ -693,7 +693,7 @@ int i;
 }
 
 /* rand_pos - randomize the starting robot postions */
-/*           dependent on MAXROBOTS <= 4 */
+/*          Used to be dependent on MAXROBOTS <= 4 */
 /*            put robots in separate quadrant */
 
 void rand_pos(n)
