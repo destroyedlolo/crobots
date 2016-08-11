@@ -703,9 +703,11 @@ int n;
 {
   int i, k;
   int quad[MAXROBOTS];
-  int m=n%2;
-  if(m==0){
-    m=1;
+  
+  int m;
+  m=n/2;
+  if (m<1) {
+  	m=1;
   }
 
   for (i = 0; i < MAXROBOTS; i++) {
