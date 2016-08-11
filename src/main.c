@@ -1,5 +1,6 @@
 
 
+
 /*****************************************************************************/
 /*                                                                           */
 /*  CROBOTS                                                                  */
@@ -321,7 +322,7 @@ int n;
 #endif
 
   rand_pos(num_robots);
-By
+
   init_disp();
   update_disp();
   movement = MOTION_CYCLES;
