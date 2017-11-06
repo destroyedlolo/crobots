@@ -89,7 +89,19 @@ char *argv[];
     if (argv[i][0] == '-') {
 
       switch (argv[i][1]) {
-
+	case 'h':
+		printf("-l<nbr> : limit number of cycles in a match\n"
+			"-m<nbre> : run multiple matches\n"
+			"-c : compile only\n"
+			"-d : debug one robot\n"
+			"-s : full debug\n"
+			"-w : slow mode (speed set to 1)\n"
+		);
+		exit(0);
+	case 'w':
+	case 'W':
+		ritardo = LENTO;
+		break;
 	/* limit number of cycles in a match */
 	case 'l':
 	case 'L':
